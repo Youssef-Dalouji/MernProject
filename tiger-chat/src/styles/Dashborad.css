@@ -1,0 +1,72 @@
+.DashboradMain {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.DashboradMain .DashboradMenu {
+  background-color: rgb(211, 137, 0);
+  padding: 1.5rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.DashboradMain .DashboradMenu .dateDashborad h1 {
+  cursor: pointer;
+}
+.DashboradMain .DashboradMenu .dateDashborad h1:hover {
+  transition: all 1s;
+  border-bottom: 1px solid #000;
+}
+.DashboradMain .DashboradMenu .imgTitleDashborad {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.DashboradMain .DashboradMenu .imgTitleDashborad img {
+  text-align: center;
+  height: 10rem;
+}
+.DashboradMain .DashboradMenu .LinkBack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.DashboradMain .DashboradMenu .LinkBack .link {
+  text-decoration: none;
+  color: #000;
+}
+.DashboradMain .DashboradMenu .LinkBack .link:hover {
+  transition: all 1s;
+  border-bottom: 1px solid #000;
+}
+.DashboradMain .GlobalElements {
+  height: calc(100vh - 154.23px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.DashboradMain .GlobalElements .DashboradElement {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: space-around;
+  gap: 2rem;
+  flex: 1 1 auto;
+}
+.DashboradMain .GlobalElements .DashboradElement .statistiquesDashborad {
+  background-color: orangered;
+  border-radius: 5px;
+  padding: 5rem;
+  width: 25%;
+}
+.DashboradMain .GlobalElements .DashboradElement .statistiquesDashborad h1 {
+  font-size: 2rem;
+}
+.DashboradMain .GlobalElements .DashboradElement .statistiquesDashborad h3 {
+  font-size: 1.8rem;
+}/*# sourceMappingURL=Dashborad.css.map */

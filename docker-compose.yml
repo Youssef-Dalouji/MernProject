@@ -1,0 +1,94 @@
+version : "3.8"
+services:
+    client:
+      build:
+        dockerfile: Dockerfile
+        context: ./tiger-chat
+      container_name: interface_client
+      ports:
+        - "3000:3000"
+      tty: true
+      stdin_open: true
+      environment:
+        - REACT_APP_PASS_ENCR="#SEC_CYBER111@-707"
+        - REACT_APP_PASSWD="CYBER_707-101..YD*1=2YD/MNINLOP"
+      networks:
+        - mern-app
+    servermain:
+      build:
+        dockerfile: Dockerfile
+        context: ./server
+      container_name: serverMain
+      ports:
+        - "5500:5500"
+      volumes:
+        - ./server:/app
+      environment:
+        - MONGO_URI=mongodb://mongodb:27017/ChatOnline
+        - PORT=5500
+        - JWT_SEC="@@@yd20012023_mdq@@@"
+        - PASS="CYBER_707-101..YD*1=2YD/MNINLOP"
+        - RABBITMQ="amqp://guest:guest@localhost:5672"
+      depends_on:
+        - mongodb
+        - rabbitmq
+      networks:
+        - mern-app
+    serverdashborad:
+      build:
+        dockerfile: Dockerfile
+        context: ./tiger-chat-api-statistiques
+      container_name: serverDashborad
+      ports:
+        - "5501:5501"
+      volumes:
+        - ./tiger-chat-api-statistiques:/app
+      environment:
+        - MONGO_URI=mongodb://mongodb:27017/ChatOnline
+        - PORT=5501
+        - JWT_SEC="@@@yd20012023_mdq@@@"
+        - PASS="CYBER_707-101..YD*1=2YD/MNINLOP"
+        - RABBITMQ="amqp://guest:guest@localhost:5672"
+      depends_on:
+        - mongodb
+        - rabbitmq
+      networks:
+        - mern-app
+    serveremailing:
+      build:
+        dockerfile: Dockerfile
+        context: ./tiger-chat-api-emailing
+      container_name: serverEmailing
+      ports:
+        - "5502:5502"
+      volumes:
+        - ./tiger-chat-api-emailing:/app
+      networks:
+        - mern-app
+    mongodb:
+      image: mongo
+      restart: always
+      container_name: mongodb
+      ports:
+        - "27018:27017"
+      volumes:
+        - 'mongo-data:/data/db'
+      networks:
+        - mern-app
+    rabbitmq:
+      image: rabbitmq:3-management
+      container_name: rabbitmq
+      environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      ports:
+        - "15672:15672"
+        - "5672:5672"
+      networks:
+        - mern-app      
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

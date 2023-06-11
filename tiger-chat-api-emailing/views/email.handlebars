@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TigerChat</title>
+    <style>
+        .principale{
+            border: 4px solid orange;
+            width: 40vw;
+            height: 100vh;
+            background: #000;
+            color: orange;
+            text-align: center;
+            font-family: sans-serif;
+            padding: 1rem;
+            margin: 0 auto;
+        }
+        .principale .titleImg img{
+            height: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="principale">
+        <div class="titleImg">
+            <img src="https://lh3.googleusercontent.com/cEuqc4PcXSXGE37mKejPlj_hiNg-8bvNrQha2JOpc3S9CL5dkKnatz25q7aAVvTJ6Ktvw7gtiwyc8PvJrXzGpyO9KEikRsiSbIWZBT5X" alt="logo">
+            <h1>TigerChat</h1>
+        </div>
+        <div class="InfomartionPersonnelle">
+            <h1>
+                <p>
+                    Welcome to our TigerChat!
+                    Dear {{ nameUser }},
+                </p>
+            </h1>
+        </div>
+        <div class="sujet">
+            <p>
+We are thrilled to welcome you as a new member of our site! We are confident that you will find our platform useful and enjoyable.
+
+As a registered member, you now have access to our full range of features and benefits, including [list some benefits]. We are constantly updating and improving our site, so be sure to check back often for new content and features.
+
+If you have any questions or feedback, please don't hesitate to reach out to us. Our friendly support team is always ready to assist you.
+
+Thank you for choosing to be a part of our community. We look forward to seeing you on the site!
+
+Best regards,
+{{ name }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
